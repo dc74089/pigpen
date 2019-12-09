@@ -19,9 +19,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from teammanager import urls as teammanager
+from bigbrother import urls as bigbrother
 
 urlpatterns = [
     path('superuser/', admin.site.urls),
+    path('messages', include(bigbrother, namespace='bro')),
     path('', include(teammanager, namespace='man'))
 ]
 
